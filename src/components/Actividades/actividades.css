@@ -39,7 +39,9 @@
   gap: 0.5rem;
   justify-content: center;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: rgba(	33	44	82);
+
 }
 
 .contenido-columns {
