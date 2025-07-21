@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <nav className="sidebar-links">
-        {/* <Link to="/">Login</Link> */}
+        <Link to="/">Login</Link>
         <Link to="/informacion-docente">Información del Docente</Link>
         <Link to="/actividades">Actividades</Link>
       </nav>
