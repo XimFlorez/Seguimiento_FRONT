@@ -13,10 +13,9 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <h2 className="sidebar-title">Menú</h2>
       <nav className="sidebar-links">
-        <Link to="/">Login</Link>
-        <Link to="/informacion-docente">Información Docente</Link>
+        {/* <Link to="/">Login</Link> */}
+        <Link to="/informacion-docente">Información del Docente</Link>
         <Link to="/actividades">Actividades</Link>
       </nav>
 
@@ -27,4 +26,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+  export default Sidebar;

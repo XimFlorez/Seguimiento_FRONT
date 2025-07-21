@@ -4,6 +4,7 @@ import Layout from './components/Layout/layout';
 import Login from './components/Login/login';
 import InformacionDocente from './components/Informacion_Docente/informacion_docente';
 import ActividadesInstitucionales from './components/Actividades/actividades';
+import "./index.css";
 
 const App = () => {
   return (
