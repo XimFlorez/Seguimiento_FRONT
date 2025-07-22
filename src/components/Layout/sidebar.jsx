@@ -17,6 +17,9 @@ const Sidebar = () => {
         <Link to="/">Login</Link>
         <Link to="/informacion-docente">Información del Docente</Link>
         <Link to="/actividades">Actividades</Link>
+        <Link to="/carga_notas">Carga de Notas</Link>
+        <Link to="/observaciones">Observaciones</Link>
+
       </nav>
 
       <button className="logout-btn" onClick={handleLogout} title="Cerrar sesión">

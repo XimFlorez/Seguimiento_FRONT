@@ -5,6 +5,8 @@ import Login from './components/Login/login';
 import InformacionDocente from './components/Informacion_Docente/informacion_docente';
 import ActividadesInstitucionales from './components/Actividades/actividades';
 import "./index.css";
+import CargaDeNotas from './pages/Carga_Notas/carga_notas';
+import Observaciones from './pages/Observaciones/observaciones';
 
 const App = () => {
   return (
@@ -13,6 +15,9 @@ const App = () => {
         <Route index element={<Login />} />
         <Route path="informacion-docente" element={<InformacionDocente />} />
         <Route path="actividades" element={<ActividadesInstitucionales />} />
+        <Route path="carga_notas" element={<CargaDeNotas />} />
+        <Route path="observaciones" element={<Observaciones />} />
+
       </Route>
     </Routes>
   );
