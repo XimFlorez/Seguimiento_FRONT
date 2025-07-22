@@ -1,10 +1,10 @@
 .carga-container {
-  max-width: 900px;
-  height: 500px;
+  width: 1000px;
+  height: 600px;
   margin: 30px auto;
   padding: 24px;
   padding-bottom: 48px;
-  margin-top: 140px;
+  margin-top: 120px;
   background:  #e4e6e9;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -82,9 +82,9 @@
 
 
 .botones-acciones {
-  margin-top: 48px;
+  margin-top: 70px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 12px;
 }
 

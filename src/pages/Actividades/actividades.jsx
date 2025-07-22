@@ -51,7 +51,7 @@ const ActividadesInstitucionales = () => {
             </div>
           </div>
 
-          <div className="card card-pequena">
+          <div className="card card-pequena1">
             <h3>📚 Reuniones de Programa</h3>
              <p>¿Cumplió con las reuniones del programa? </p>
             <div className="opciones">
@@ -60,10 +60,14 @@ const ActividadesInstitucionales = () => {
               <label><input type="radio" name="programa" /> Nunca</label>
             </div>
           </div>
-      <div className="form-buttons">
-       <button type="submit" className="btn-save" title="Guardar"><FaSave /></button>
-        <button type="button" className="btn-clear" title="Limpiar"><FaBroom /></button>
-        <button type="button" className="btn-editar" title="Editar"><FaEdit /></button>
+
+        <div className="card-1">
+          <h4>Realice las calificaciones pertinentes al docente MARGARITO PERÉZ (101010101)</h4>
+        </div>
+
+      <div className="form-buttonss">
+        <button type="button" className="btn-clear" title="Limpiar"><FaBroom />Limpiar</button>
+        <button type="submit" className="btn-save" title="Guardar"><FaSave />Guardar</button>
       </div>
         </div>
         

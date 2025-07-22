@@ -4,19 +4,10 @@
   border-radius: 12px;
   padding: 20px;
   max-width: 1200px;
-  height: 830px;
+  height: 700px;
   margin: 0 auto;
   font-family: 'Poppins', sans-serif;
-  
 }
-
-.opciones {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
 
 .opciones label {
   background-color:#f9fbfd;
@@ -68,7 +59,6 @@
 }
 
 
-
 .card h3 {
   margin-bottom: 0.5rem;
 }
@@ -77,7 +67,6 @@
   display: block;
   margin: 4px 0;
 }
-
 
 
 .contenido-columns {
@@ -105,6 +94,7 @@
 .card-pequena {
   padding: 12px;
   font-size: 0.95rem;
+  height: 140px;
 }
 
 .card h3 {
@@ -121,15 +111,41 @@
 
 .opciones {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 6px;
   font-size: 0.95rem;
+  justify-content: center;
 }
 
 
-
-.form-buttons{
-  margin-top: 220px;
+.form-buttonss{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
+.card-1{
+  background-color: #1e2a57;
+  color: white;
+  height: 140px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card-1 h4{
+  margin-top: 35                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        px;
+}
+
+.card-pequena1{
+  background-color: white;
+  color: black;
+  height: 145px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}

@@ -2,8 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/layout';
 import Login from './components/Login/login';
-import InformacionDocente from './components/Informacion_Docente/informacion_docente';
-import ActividadesInstitucionales from './components/Actividades/actividades';
+import InformacionDocente from './pages/Informacion_Docente/informacion_docente';
+import ActividadesInstitucionales from './pages/Actividades/actividades';
 import "./index.css";
 import CargaDeNotas from './pages/Carga_Notas/carga_notas';
 import Observaciones from './pages/Observaciones/observaciones';
@@ -17,7 +17,6 @@ const App = () => {
         <Route path="actividades" element={<ActividadesInstitucionales />} />
         <Route path="carga_notas" element={<CargaDeNotas />} />
         <Route path="observaciones" element={<Observaciones />} />
-
       </Route>
     </Routes>
   );

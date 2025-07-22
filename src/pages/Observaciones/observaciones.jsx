@@ -13,6 +13,9 @@ export default function Observaciones() {
           <FaFilePdf />
         </button>
       </div>
+        <div className="cardd">
+          <h4>Realice las observaciones pertinentes al docente MARGARITO PERÉZ (101010101)</h4>
+        </div>
 
       <div className="observaciones-body">
         <div className="observacion-box">
@@ -31,9 +34,8 @@ export default function Observaciones() {
       </div>
 
       <div className='botones-acciones'>
-        <button type="submit" className="btn-save" title="Guardar"><FaSave /></button>
-        <button type="button" className="btn-clear" title="Limpiar"><FaBroom /></button>
-        <button type="button" className="btn-editar" title="Editar"><FaEdit /></button>
+        <button type="button" className="btn-clear" title="Limpiar"><FaBroom />Limpiar</button>
+        <button type="submit" className="btn-save" title="Guardar"><FaSave />Guardar</button>
       </div>
       </div>
   );

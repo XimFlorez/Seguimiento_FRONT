@@ -4,10 +4,15 @@ import './carga_de_notas.css';
 export default function CargaDeNotas() {
   return (
     <div className="carga-container">
+      
       {/* Header */}
       <div className="carga-header">
         <span className="icon">📊</span>
         <h2>Carga de Notas</h2>
+      </div>
+
+      <div className="cardd">
+          <h4>Evalue el cumplimiento en la carga de notas, del docente MARGARITO PERÉZ (101010101)</h4>
       </div>
 
       {/* Contenido */}
@@ -44,9 +49,8 @@ export default function CargaDeNotas() {
       </div> 
 
       <div className='botones-acciones'>
-        <button type="submit" className="btn-save" title="Guardar"><FaSave /></button>
-        <button type="button" className="btn-clear" title="Limpiar"><FaBroom /></button>
-        <button type="button" className="btn-editar" title="Editar"><FaEdit /></button>
+        <button type="button" className="btn-clear" title="Limpiar"><FaBroom />Limpiar</button>
+        <button type="submit" className="btn-save" title="Guardar"><FaSave />Guardar</button>
       </div>
     </div>
   );

@@ -4,6 +4,8 @@
   align-items: center;
   height: 100vh;
   padding: 20px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .login-container {

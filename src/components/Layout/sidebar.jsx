@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaSignOutAlt } from 'react-icons/fa';
 import './sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -12,7 +12,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <nav className="sidebar-links">
         <Link to="/">Login</Link>
         <Link to="/informacion-docente">Información del Docente</Link>

@@ -5,10 +5,6 @@ import { FaSave, FaBroom, FaEdit } from "react-icons/fa"; // Importar íconos
 
 
 const EvaluacionForm = () => {
-  const handleReset = () => {
-    document.getElementById("evaluacion-form").reset();
-  };
-
   return (
    <div className="form-container">
     <h2 className="evaluacion-title"> 📝 Formulario de Seguimiento a Docentes</h2>
@@ -48,13 +44,13 @@ const EvaluacionForm = () => {
       <div className="form-group">
         <label>Semestre</label>
         <select>
-          <option value="">Seleccionar semestre</option>
+          <option value="">Seleccionar</option>
           <option value="2025-1">2025-1</option>
           <option value="2025-2">2025-2</option>
         </select>
       </div>
       <div className="form-group-full">
-        <label>Día de Encuentro Sincrónico</label>
+        <label>Día de Encuentro</label>
         <select>
           <option value="">Seleccionar día</option>
           <option value="Lunes">Lunes</option>
@@ -71,12 +67,12 @@ const EvaluacionForm = () => {
       </div>
     </div>
 
-    <div className="form-buttonss">
-        <button type="submit" className="btn-save" title="Guardar"><FaSave /></button>
-        <button type="button" className="btn-clear" title="Limpiar"><FaBroom /></button>
-        <button type="button" className="btn-editar" title="Editar"><FaEdit /></button>
-    </div>
   </form>
+  
+      <div className='botones-acciones'>
+        <button type="button" className="btn-clear" title="Limpiar"><FaBroom />Limpiar</button>
+        <button type="submit" className="btn-save" title="Guardar"><FaSave />Guardar</button>
+    </div>
 </div>
 )}
 

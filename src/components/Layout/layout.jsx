@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './sidebar';
-import './layout.css'; 
+import { FaBars } from 'react-icons/fa';
+import './layout.css';
 
 const Layout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+   const toggleSidebar = () => {
+    setIsSidebarOpen(prev => !prev);
+  };
+
   return (
     <div className="layout-container">
+
       {/* Header */}
       <header className="header">
+        <button className="menu-button" onClick={toggleSidebar}>
+          <FaBars />
+        </button>
         <span className="user-name">👤 WebMaster</span>
       </header>
 
+
+
       {/* Body: Sidebar + Main Content */}
       <div className="body-container">
-        <Sidebar />
+        <Sidebar isOpen={isSidebarOpen} />
         <main className="main-content">
           <Outlet />
         </main>
