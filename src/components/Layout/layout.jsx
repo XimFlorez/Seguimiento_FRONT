@@ -3,6 +3,8 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from './sidebar';
 import { FaBars } from 'react-icons/fa';
 import './layout.css';
+import logo from '../../assets/img/logo-layout.png'; 
+
 
 const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -19,7 +21,7 @@ const Layout = () => {
         <button className="menu-button" onClick={toggleSidebar}>
           <FaBars />
         </button>
-        <span className="user-name">👤 WebMaster</span>
+          <img src={logo} alt="Logo" className="header-logo" />
       </header>
 
 

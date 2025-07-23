@@ -4,7 +4,7 @@
   margin: 30px auto;
   padding: 24px;
   padding-bottom: 48px;
-  margin-top: 120px;
+  margin-top: 60px;
   background:  #e4e6e9;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -26,6 +26,7 @@
 .carga-header h2 {
   font-size: 20px;
   font-weight: bold;
+  color: #2c3e50;
 }
 
 .notas-grid {
@@ -41,8 +42,7 @@
   padding: 16px;
   background-color: white;
   height: 300px;
-      font-family: 'Poppins', sans-serif;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 .nota-box h3 {
@@ -50,6 +50,7 @@
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
+  color: black;
   
 }
 
@@ -88,34 +89,9 @@
   gap: 12px;
 }
 
-.btn-save {
-  background-color: #1e2a57; 
-  color: white;
-  padding: 8px 18px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
 
 .btn-save:hover {
   background-color: #2c3b73;
-}
-
-.btn-editar {
-  background-color: rgba(86	164	219);
-  color: white;
-  padding: 8px 18px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.btn-editar:hover {
-background-color: rgba(	0	166	208);
 }
 
 .botones-acciones button svg {

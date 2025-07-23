@@ -16,7 +16,6 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 65px;
 }
 
 .login-left {
@@ -29,14 +28,6 @@
   justify-content: center;
 }
 
-.overlay-text {
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-  text-align: center;
-  padding: 0 20px;
-}
 
 .login-right {
   width: 55%;
@@ -47,16 +38,6 @@
   align-items: center;
 }
 
-.title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.title span {
-  font-weight: normal;
-  color: rgba(	33	44	82)
-}
 
 .form {
   display: flex;
@@ -64,12 +45,7 @@
   gap: 15px;
 }
 
-.form input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-}
+
 
 .form button {
   padding: 12px;
@@ -89,14 +65,14 @@
 .forgot {
   font-size: 14px;
   text-align: right;
-  color:rgba(	33	44	82);
+  color:rgba(	33	44	82);  
   text-decoration: none;
   text-align: center;
   margin-top: 10px;
 }
 
-.forgot:hover {
-  text-decoration: underline;
+.forgot:hover{
+ color: #005fa3;
 }
 
 

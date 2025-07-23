@@ -4,7 +4,7 @@
   border-radius: 12px;
   padding: 20px;
   margin: 40px auto;
-  margin-top: 120px;
+  margin-top: 60px;
   max-width: 960px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   font-family: 'Poppins', sans-serif;
@@ -33,7 +33,7 @@
 }
 
 .emoji {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .cardd{
@@ -97,13 +97,6 @@
   resize: vertical;
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
-}
-
-.observaciones-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 20px;
 }
 
 .btn-save, .btn-clear {

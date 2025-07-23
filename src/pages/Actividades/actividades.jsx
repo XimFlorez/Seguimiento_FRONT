@@ -11,9 +11,14 @@ const ActividadesInstitucionales = () => {
       
       <div className="contenido-columns">
         <div className="columna">
+
+        <div className="card-1">
+          <h4>Realice las calificaciones pertinentes al docente MARGARITO PERÉZ (101010101)</h4>
+        </div>
+
           <div className="card">
             <h3>📅 Entrega de Cronograma</h3>
-            <p>¿Entregó el cronograma del curso?</p>
+            <p className='pregunta'>¿Entregó el cronograma del curso?</p>
             <div className="opciones">
               <label><input type="radio" name="cronograma" /> Sí</label>
               <label><input type="radio" name="cronograma" /> No</label>
@@ -23,28 +28,28 @@ const ActividadesInstitucionales = () => {
 
           <div className="card">
             <h3>📢 Canales Institucionales</h3>
-            <p>¿Usa los canales institucionales?</p>
+            <p className='pregunta'>¿Usa los canales institucionales?</p>
             <div className="opciones">
               <label><input type="radio" name="canales" /> Siempre</label>
               <label><input type="radio" name="canales" /> A veces</label>
               <label><input type="radio" name="canales" /> Nunca</label>
             </div>
           </div>
+        </div>
 
+        <div className="columna">
           <div className="card">  
             <h3>👥 Reunión Inicio de Semestre</h3>
-            <p>¿Asistió a la reunión de inicio del semestre? </p>
+            <p className='pregunta'>¿Asistió a la reunión de inicio del semestre? </p>
             <div className="opciones">
               <label><input type="radio" name="inicio" /> Asistió</label>
               <label><input type="radio" name="inicio" /> No asistió</label>
             </div>
           </div>
-        </div>
 
-        <div className="columna">
           <div className="card card-pequena">
             <h3>🔚 Reunión Cierre de Semestre</h3>
-           <p>¿Asistió a la reunión de cierre del semestre?</p>
+           <p className='pregunta'>¿Asistió a la reunión de cierre del semestre?</p>
             <div className="opciones">
               <label><input type="radio" name="cierre" /> Asistió</label>
               <label><input type="radio" name="cierre" /> No asistió</label>
@@ -53,26 +58,19 @@ const ActividadesInstitucionales = () => {
 
           <div className="card card-pequena1">
             <h3>📚 Reuniones de Programa</h3>
-             <p>¿Cumplió con las reuniones del programa? </p>
+             <p className='pregunta'>¿Cumplió con las reuniones del programa? </p>
             <div className="opciones">
               <label><input type="radio" name="programa" /> Siempre</label>
               <label><input type="radio" name="programa" /> A veces</label>
               <label><input type="radio" name="programa" /> Nunca</label>
             </div>
           </div>
-
-        <div className="card-1">
-          <h4>Realice las calificaciones pertinentes al docente MARGARITO PERÉZ (101010101)</h4>
         </div>
-
+      </div>
       <div className="form-buttonss">
         <button type="button" className="btn-clear" title="Limpiar"><FaBroom />Limpiar</button>
         <button type="submit" className="btn-save" title="Guardar"><FaSave />Guardar</button>
       </div>
-        </div>
-        
-      </div>
-
     </div>
   );
 };

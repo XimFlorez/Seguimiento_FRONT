@@ -1,7 +1,7 @@
 import React from 'react';
 import './informacion.css';
 import Layout from "../../components/Layout/layout";
-import { FaSave, FaBroom, FaEdit } from "react-icons/fa"; // Importar íconos
+import { FaSave, FaBroom, FaSearch} from "react-icons/fa"; // Importar íconos
 
 
 const EvaluacionForm = () => {
@@ -9,13 +9,23 @@ const EvaluacionForm = () => {
    <div className="form-container">
     <h2 className="evaluacion-title"> 📝 Formulario de Seguimiento a Docentes</h2>
 
+<div className='card card2'>
+  <div className="documento-contenedor">
+    <div className="documento-izquierda">
+      <label htmlFor="documento">Documento:</label>
+      <input type="text" id="documento" className='documento' placeholder="Documento del docente" />
+    </div>
+    <button type="button" className="btn-buscar" title="Buscar">
+      <FaSearch /> Buscar
+    </button>
+  </div>
+</div>
+
   <form id="evaluacion-form" className="form-grid">
+
     {/* CARD 1 */}
     <div className="card1">
-      <div className="form-group">
-        <label>Documento</label>
-        <input type="text" placeholder="Documento del docente" />
-      </div>
+
       <div className="form-group">
         <label>Nombre</label>
         <input type="text" placeholder="Nombre del docente" />

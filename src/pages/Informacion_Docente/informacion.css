@@ -5,7 +5,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
   margin: 3rem auto;
-  margin-top: 70px;
+  margin-top: 60px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -49,35 +49,6 @@ select:focus {
 }
 
 
-
-.btn-save,
-.btn-clear {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn-save {
-  background-color: rgba(	33	44	82);
-  color: white;
-}
-
-.btn-save:hover {
-  background-color:  #202B52;
-}
-
-.btn-clear {
-  background-color: #c2c4c7;
-  color: #111827;
-}
-
-.btn-clear:hover {
-  background-color: #d1d5db;
-}
-
 .evaluacion-title {
   font-size: 20px;
   font-weight: bold;
@@ -103,10 +74,58 @@ select:focus {
 }
 
 
-.btn-save, .btn-clear {
-  padding: 0.6rem 1.2rem;
-  font-weight: bold;
-  border-radius: 5px;
+.card2 {
+  height: auto;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.documento-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.documento-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.documento {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-bottom: 5px;
+}
+
+
+.btn-buscar {
+  background-color: #1e2a57;
+  color: white;
+  padding: 0.5rem 18px;
+  font-size: 14px;
+  border-radius: 8px;
   border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 5px;
+}
+
+
+.btn-buscar:hover {
+  background-color: #162044;
 }
