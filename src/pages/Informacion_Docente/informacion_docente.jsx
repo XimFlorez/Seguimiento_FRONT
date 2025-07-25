@@ -3,6 +3,7 @@ import './informacion.css';
 import Layout from "../../components/Layout/layout";
 import { FaSave, FaBroom, FaSearch} from "react-icons/fa"; // Importar íconos
 import { buscarDocentePorDocumento, obtenerAsignaturasPorDocumento, guardarEvaluacion } from '../../services/docenteService';
+import Swal from 'sweetalert2';
 
 
 const EvaluacionForm = () => {
@@ -11,6 +12,7 @@ const EvaluacionForm = () => {
   const [apellido, setApellido] = useState("");
   const [asignaturas, setAsignaturas] = useState([]);
   const [asignaturaSeleccionada, setAsignaturaSeleccionada] = useState("");
+  const [bloquearFormulario, setBloquearFormulario] = useState(false);
 
   const [formulario, setFormulario] = useState({
     ciclo: "",
@@ -32,8 +34,8 @@ const EvaluacionForm = () => {
 
       const asignaturas = await obtenerAsignaturasPorDocumento(documento);
       console.log("Asignaturas filtradas:", asignaturas);
-      setAsignaturas(asignaturas.map(a => a.nombre));
-    } catch (err) {
+      setAsignaturas(asignaturas);    
+      } catch (err) {
       console.error("Error al buscar docente/asignaturas: ", err);
       alert("Docente no encontrado o sin asignaturas.")
     }
@@ -41,6 +43,21 @@ const EvaluacionForm = () => {
 
 
 const handleGuardar = async () => {
+  const resultadoConfirmacion = await Swal.fire({
+    title: '¿Seguro deseas guardar esta evaluación?',
+    // text: '¿Deseas guardar esta evaluación?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#1e2a57',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, guardar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  if(!resultadoConfirmacion.isConfirmed){
+    return;
+  }
+
   const evaluacion = {
     documento, 
     nombre, 
@@ -53,11 +70,28 @@ const handleGuardar = async () => {
 
   try {
     const resultado = await guardarEvaluacion(evaluacion);
-    alert("Evaluación guardada correctamente.");
+
+    await Swal.fire({
+      title: '¡Guardado!',
+      text: 'La evaluación fue guardada exitosamente.',
+      icon: 'success',
+      customClass:{
+        icon: 'icono-personalizado'
+      }
+
+    });
+
+    setBloquearFormulario(true);
+
     console.log("Respuesta del servidor:", resultado);
   } catch (error) {
     console.error("Error al guardar la evaluación:", error);
-    alert("Hubo un error al guardar la evaluación. Revisa la consola.");
+
+    await Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Hubo un error al guardar la evaluación.Revisa la consola.'
+    });
   }
 };
 
@@ -119,11 +153,12 @@ const handleGuardar = async () => {
 <select
   value={asignaturaSeleccionada}
   onChange={(e) => setAsignaturaSeleccionada(e.target.value)}
+  disabled={bloquearFormulario}
 >
   <option value="">Seleccionar Asignatura</option>
   {asignaturas.map((a, index) => (
-    <option key={index} value={a.id}>
-      {a.nombre_asignatura} - Grupo {a.grupo}
+   <option key={index} value={`${a.id} - Grupo ${a.grupo}`}>
+      {`${a.nombre} - ${a.grupo}`}
     </option>
   ))}
 </select>
@@ -132,7 +167,8 @@ const handleGuardar = async () => {
       </div>
       <div className="form-group">
         <label>Ciclo</label>
-        <select value={formulario.ciclo} onChange={(e) => setFormulario ({ ...formulario, ciclo: e.target.value })}>
+        <select value={formulario.ciclo} onChange={(e) => setFormulario ({ ...formulario, ciclo: e.target.value })}
+        disabled={bloquearFormulario}>
           <option value="">Seleccionar ciclo</option>
           <option value="I">I</option>
           <option value="II">II</option>
@@ -145,7 +181,8 @@ const handleGuardar = async () => {
     <div className="card1">
       <div className="form-group">
         <label>Semestre</label>
-        <select value={formulario.semestre} onChange={(e) => setFormulario({ ...formulario, semestre: e.target.value })}>
+        <select value={formulario.semestre} onChange={(e) => setFormulario({ ...formulario, semestre: e.target.value })}
+        disabled={bloquearFormulario}>
           <option value="">Seleccionar</option>
           <option value="2025-1">2025-1</option>
           <option value="2025-2">2025-2</option>
@@ -154,7 +191,8 @@ const handleGuardar = async () => {
 
       <div className="form-group-full">
         <label>Día de Encuentro</label>
-        <select value={formulario.diaEncuentro} onChange={(e) => setFormulario({ ...formulario, diaEncuentro: e.target.value })}>
+        <select value={formulario.diaEncuentro} onChange={(e) => setFormulario({ ...formulario, diaEncuentro: e.target.value })}
+        disabled={bloquearFormulario}>
           <option value="">Seleccionar día</option>
           <option value="Lunes">Lunes</option>
           <option value="Martes">Martes</option>
@@ -170,14 +208,21 @@ const handleGuardar = async () => {
         <input type="date"
         value={formulario.fechaEvaluacion}
         onChange={(e) => setFormulario({ ...formulario, fechaEvaluacion: e.target.value })} 
-        />
+        disabled={bloquearFormulario}/>
       </div>
     </div>
 </form>
   
       <div className='botones-acciones'>
         <button type="button" className="btn-clear" onClick={handleLimpiar} title="Limpiar"><FaBroom />Limpiar</button>
-        <button type="submit" className="btn-save" onClick={handleGuardar} title="Guardar"><FaSave />Guardar</button>
+        <button 
+        type="submit" 
+        className="btn-save" 
+        onClick={handleGuardar} 
+        title="Guardar"
+        disabled={bloquearFormulario}
+        >
+        <FaSave />Guardar</button>
     </div>
 </div>
 )}

@@ -1,5 +1,5 @@
 //Obtiene los datos de los docentes desde la base de datos.
-const API_URL = "http://10.1.1.171:8001/api";
+import API_URL from "../config";
 
 export const buscarDocentePorDocumento = async (documento) => {
   const response = await fetch(`${API_URL}/docentes/info/${documento}`);
