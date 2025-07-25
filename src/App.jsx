@@ -8,6 +8,9 @@ import "./index.css";
 import CargaDeNotas from './pages/Carga_Notas/carga_notas';
 import Observaciones from './pages/Observaciones/observaciones';
 import { useEffect, useState } from "react";
+import Encuentros from './pages/Encuentros/encuentros';
+import CargarDatos from './pages/Cargar_Datos/cargar_datos';
+import SeguimientoFuncional from './pages/Seguimiento_Funcional/seguimiento_funcional';
 
 const App = () => {
    const [mensaje, setMensaje] = useState("");
@@ -27,9 +30,13 @@ const App = () => {
         <Route path="actividades" element={<ActividadesInstitucionales />} />
         <Route path="carga_notas" element={<CargaDeNotas />} />
         <Route path="observaciones" element={<Observaciones />} />
+        <Route path="encuentros" element={<Encuentros/>} />
+        <Route path="cargar_datos" element={<CargarDatos/>}></Route>
+        <Route path="seguimiento-funcional" element={<SeguimientoFuncional/>}></Route>
       </Route>
     </Routes>
   );
 };
 
 export default App;
+

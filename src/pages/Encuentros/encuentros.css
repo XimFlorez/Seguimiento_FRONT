@@ -1,0 +1,104 @@
+.encuentro-container {
+  width: 1200px;
+  height: 650px;
+  margin: 30px auto;
+  padding: 24px;
+  padding-bottom: 48px;
+  margin-top: 60px;
+  background:  #e4e6e9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+}
+
+.encuentro-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.encuentro-header .icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.encuentro-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.opciones-encuentros{
+  display: flex;
+  margin-top: 14px;
+  justify-content: left;
+  margin-bottom: -20px;
+}
+
+.botones-acciones {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.botones-acciones button svg {
+  font-size: 15px;
+}
+
+.botones-acciones-card {
+  margin-top: 10px;
+  display: flex;
+  justify-content: right;
+}
+
+
+.encuentros-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.encuentros-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: white;
+  height: 100%;
+  width: 52%;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 5px 5px 5px rgb(146, 146, 146);
+}
+
+.encuentros-box h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+  
+}
+
+.encuentros-box label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+
+.encuentros-box input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.encuentros-box input[type="time"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
