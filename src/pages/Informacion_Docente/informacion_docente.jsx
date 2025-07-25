@@ -1,10 +1,82 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './informacion.css';
 import Layout from "../../components/Layout/layout";
 import { FaSave, FaBroom, FaSearch} from "react-icons/fa"; // Importar íconos
+import { buscarDocentePorDocumento, obtenerAsignaturasPorDocumento, guardarEvaluacion } from '../../services/docenteService';
 
 
 const EvaluacionForm = () => {
+  const [documento, setDocumento] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [asignaturas, setAsignaturas] = useState([]);
+  const [asignaturaSeleccionada, setAsignaturaSeleccionada] = useState("");
+
+  const [formulario, setFormulario] = useState({
+    ciclo: "",
+    semestre:"",
+    diaEncuentro:"",
+    fechaEvaluacion:""
+  });
+
+
+  const handleBuscar = async () => {
+    try{
+      console.log("Buscando con documento:", documento);
+      const docente = await buscarDocentePorDocumento(documento);
+      console.log("Respuesta del docente:", docente);
+      if(docente){
+        setNombre(docente.nombre);
+        setApellido(docente.apellido);
+      }
+
+      const asignaturas = await obtenerAsignaturasPorDocumento(documento);
+      console.log("Asignaturas filtradas:", asignaturas);
+      setAsignaturas(asignaturas.map(a => a.nombre));
+    } catch (err) {
+      console.error("Error al buscar docente/asignaturas: ", err);
+      alert("Docente no encontrado o sin asignaturas.")
+    }
+  };
+
+
+const handleGuardar = async () => {
+  const evaluacion = {
+    documento, 
+    nombre, 
+    apellido,
+    asignatura: asignaturaSeleccionada,
+    ...formulario,
+  };
+
+  console.log("Datos a guardar: ", evaluacion);
+
+  try {
+    const resultado = await guardarEvaluacion(evaluacion);
+    alert("Evaluación guardada correctamente.");
+    console.log("Respuesta del servidor:", resultado);
+  } catch (error) {
+    console.error("Error al guardar la evaluación:", error);
+    alert("Hubo un error al guardar la evaluación. Revisa la consola.");
+  }
+};
+
+
+  const handleLimpiar = () => {
+    setDocumento("");
+    setNombre("");
+    setApellido("");
+    setAsignaturas([]);
+    setAsignaturaSeleccionada("");
+    setFormulario({
+      ciclo: "",
+      semestre: "",
+      diaEncuentro: "",
+      fechaEvaluacion: ""
+    });
+  };
+
+
   return (
    <div className="form-container">
     <h2 className="evaluacion-title"> 📝 Formulario de Seguimiento a Docentes</h2>
@@ -13,9 +85,16 @@ const EvaluacionForm = () => {
   <div className="documento-contenedor">
     <div className="documento-izquierda">
       <label htmlFor="documento">Documento:</label>
-      <input type="text" id="documento" className='documento' placeholder="Documento del docente" />
+      <input 
+        type="text" 
+        id="documento" 
+        className='documento'
+        value={documento}
+        onChange={(e) => setDocumento(e.target.value)}
+        placeholder="Documento del docente" 
+      />
     </div>
-    <button type="button" className="btn-buscar" title="Buscar">
+    <button type="button" className="btn-buscar" onClick={handleBuscar} title="Buscar">
       <FaSearch /> Buscar
     </button>
   </div>
@@ -25,22 +104,35 @@ const EvaluacionForm = () => {
 
     {/* CARD 1 */}
     <div className="card1">
-
       <div className="form-group">
         <label>Nombre</label>
-        <input type="text" placeholder="Nombre del docente" />
+        <input type="text" value={nombre || ""} placeholder="Nombre del docente" readOnly/>
       </div>
+
       <div className="form-group">
         <label>Apellido</label>
-        <input type="text" placeholder="Apellido del docente" />
+        <input type="text" value={apellido || ""} placeholder="Apellido del docente" readOnly/>
       </div>
+
       <div className="form-group-full">
         <label>Nombre de la Asignatura</label>
-        <input type="text" placeholder="Nombre de la asignatura" />
+<select
+  value={asignaturaSeleccionada}
+  onChange={(e) => setAsignaturaSeleccionada(e.target.value)}
+>
+  <option value="">Seleccionar Asignatura</option>
+  {asignaturas.map((a, index) => (
+    <option key={index} value={a.id}>
+      {a.nombre_asignatura} - Grupo {a.grupo}
+    </option>
+  ))}
+</select>
+
+         
       </div>
       <div className="form-group">
         <label>Ciclo</label>
-        <select>
+        <select value={formulario.ciclo} onChange={(e) => setFormulario ({ ...formulario, ciclo: e.target.value })}>
           <option value="">Seleccionar ciclo</option>
           <option value="I">I</option>
           <option value="II">II</option>
@@ -53,15 +145,16 @@ const EvaluacionForm = () => {
     <div className="card1">
       <div className="form-group">
         <label>Semestre</label>
-        <select>
+        <select value={formulario.semestre} onChange={(e) => setFormulario({ ...formulario, semestre: e.target.value })}>
           <option value="">Seleccionar</option>
           <option value="2025-1">2025-1</option>
           <option value="2025-2">2025-2</option>
         </select>
       </div>
+
       <div className="form-group-full">
         <label>Día de Encuentro</label>
-        <select>
+        <select value={formulario.diaEncuentro} onChange={(e) => setFormulario({ ...formulario, diaEncuentro: e.target.value })}>
           <option value="">Seleccionar día</option>
           <option value="Lunes">Lunes</option>
           <option value="Martes">Martes</option>
@@ -71,17 +164,20 @@ const EvaluacionForm = () => {
           <option value="Sábado">Sábado</option>
         </select>
       </div>
+
       <div className="form-group-full">
         <label>Fecha de Evaluación</label>
-        <input type="date" />
+        <input type="date"
+        value={formulario.fechaEvaluacion}
+        onChange={(e) => setFormulario({ ...formulario, fechaEvaluacion: e.target.value })} 
+        />
       </div>
     </div>
-
-  </form>
+</form>
   
       <div className='botones-acciones'>
-        <button type="button" className="btn-clear" title="Limpiar"><FaBroom />Limpiar</button>
-        <button type="submit" className="btn-save" title="Guardar"><FaSave />Guardar</button>
+        <button type="button" className="btn-clear" onClick={handleLimpiar} title="Limpiar"><FaBroom />Limpiar</button>
+        <button type="submit" className="btn-save" onClick={handleGuardar} title="Guardar"><FaSave />Guardar</button>
     </div>
 </div>
 )}

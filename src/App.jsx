@@ -10,8 +10,18 @@ import Observaciones from './pages/Observaciones/observaciones';
 import Encuentros from './pages/Encuentros/encuentros';
 import CargarDatos from './pages/Cargar_Datos/cargar_datos';
 import SeguimientoFuncional from './pages/Seguimiento_Funcional/seguimiento_funcional';
+import { useEffect, useState } from "react";
 
 const App = () => {
+   const [mensaje, setMensaje] = useState("");
+
+  // useEffect(() => {
+  //   fetch("http://10.1.1.171:8001/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setMensaje(data.mensaje))
+  //     .catch((err) => console.error("Error:", err));
+  // }, []);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
