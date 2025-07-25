@@ -7,8 +7,18 @@ import ActividadesInstitucionales from './pages/Actividades/actividades';
 import "./index.css";
 import CargaDeNotas from './pages/Carga_Notas/carga_notas';
 import Observaciones from './pages/Observaciones/observaciones';
+import { useEffect, useState } from "react";
 
 const App = () => {
+   const [mensaje, setMensaje] = useState("");
+
+  // useEffect(() => {
+  //   fetch("http://10.1.1.171:8001/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setMensaje(data.mensaje))
+  //     .catch((err) => console.error("Error:", err));
+  // }, []);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

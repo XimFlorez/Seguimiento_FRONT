@@ -26,7 +26,7 @@ const Sidebar = ({ isOpen }) => {
   {/* Navegación */}
   <div className="sidebar-content">
     <nav className="sidebar-links">
-      <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Login</NavLink>
+      {/* <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Login</NavLink> */}
       <NavLink to="/informacion-docente" className={({ isActive }) => isActive ? 'active' : ''}>Información del Docente</NavLink>
       <NavLink to="/actividades" className={({ isActive }) => isActive ? 'active' : ''}>Actividades</NavLink>
       <NavLink to="/carga_notas" className={({ isActive }) => isActive ? 'active' : ''}>Carga de Notas</NavLink>

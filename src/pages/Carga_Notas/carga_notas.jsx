@@ -1,21 +1,62 @@
+//Componente para evaluar el cumplimiento en la carga de notas de un docente.
+//Permite seleccionar las fechas y evaluar si las notas fueron cargadas a tiempo o no.
 import { FaSave, FaBroom, FaEdit } from "react-icons/fa"; // Importar íconos
 import './carga_de_notas.css';
+import { useState } from "react";
+import {guardarNotas} from '../../services/carga_notasService';
 
-export default function CargaDeNotas() {
+
+const  CargaDeNotas = () => {
+//Estado que contiene las respuestas de los formularios
+const [formData, setFormData] = useState({
+  fecha_limite: "",
+  fecha_carga: "",
+  a_tiempo: "",
+});
+
+
+//Actualiza el estado formData cuando se selecciona una opción del formulario.
+// (e) -> Evento del Input.
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+
+//Limpia todas las respuestas del formulario.
+const handleClear = () => {
+  setFormData({
+    fecha_limite: "",
+    fecha_carga: "",
+    a_tiempo: "",
+  });
+};
+
+
+//Envía los datos al backend usando la función fetch guardarNotas.
+const handleSubmit = async () => {
+  try{
+    const result = await guardarNotas(formData);
+    alert(result.mensaje); //Muestra el mensaje del backend
+  } catch (error) {
+    alert ("No se pudieron guardar los datos.");
+  }
+};
+
   return (
     <div className="carga-container">
-      
-      {/* Header */}
       <div className="carga-header">
         <span className="icon">📊</span>
         <h2>Carga de Notas</h2>
       </div>
 
+    {/* Tarjetas que contienen los formularios de carga de notas. */}
       <div className="cardd">
           <h4>Evalue el cumplimiento en la carga de notas, del docente MARGARITO PERÉZ (101010101)</h4>
       </div>
 
-      {/* Contenido */}
       <div className="notas-grid">
         {/* Sección 70% */}
         <div className="nota-box">
@@ -48,6 +89,7 @@ export default function CargaDeNotas() {
         </div>
       </div> 
 
+    {/* Botones de acción. */}
       <div className='botones-acciones'>
         <button type="button" className="btn-clear" title="Limpiar"><FaBroom />Limpiar</button>
         <button type="submit" className="btn-save" title="Guardar"><FaSave />Guardar</button>
@@ -55,3 +97,5 @@ export default function CargaDeNotas() {
     </div>
   );
 }
+
+export default CargaDeNotas;

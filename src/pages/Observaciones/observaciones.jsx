@@ -1,7 +1,47 @@
+//Componente para realizar observaciones acerca del desempeño del docente.
+//Permite realizar observaciones y guardarlas mediante un servicio.
 import { FaSave, FaBroom, FaEdit,FaFilePdf } from "react-icons/fa"; // Importar íconos
 import './Observaciones.css';
+import {guardarObservaciones} from '../../services/observacionesService'
+import { useState } from "react";
 
-export default function Observaciones() {
+const Observaciones = () => {
+  //Estado que contiene las observaciones
+  const [formData, setFormData] = useState({
+    coordinacion: "",
+    revisor: "",
+  });
+
+
+  //Actualiza el estado formData cuando se realiza una observación.
+  // (e) -> Evento del Input.
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+
+  //Limpia todas las observaciones.
+  const handleClear = () => {
+    setFormData({
+      coordinacion: "",
+      revisor: "",
+    });
+  };
+
+
+  //Envía las observaciones al backend usando la función fetch guardarObservaciones.
+  const handleSubmit = async () => {
+    try{
+      const result = await guardarObservaciones(formData);
+      alert(result.mensaje); //Muestra el mensaje del backend
+    } catch (error) {
+      alert("No se pudieron guardar los datos.");
+    }
+  };
+
   return (
     <div className="observaciones-container">
       <div className="observaciones-header">
@@ -40,3 +80,5 @@ export default function Observaciones() {
       </div>
   );
 }
+
+export default Observaciones;
