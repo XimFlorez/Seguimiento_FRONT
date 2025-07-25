@@ -1,5 +1,5 @@
 //Guarda las observaciones respectivas al docente.
-const API_URL = "http://10.1.1.171:8001/api";
+import API_URL from "../config";
 
 export const guardarObservaciones = async (formData) => {
     try{
