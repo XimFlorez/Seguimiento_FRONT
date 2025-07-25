@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.seguimiento-container {
+    position: relative;
+    width: 1200px;
+    margin: 60px auto;
+    padding: 24px;
+    padding-bottom: 60px;
+    margin-bottom: -40px;
+    background: #e4e6e9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 31, 31, 0.08);
+}
+
+.semana-tab {
+    background: #ffffff;
+    margin-top: -20px;
+    border: 2px solid #e2e8f0;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    color: #718096;
+}
+
+.semana-tabs :hover {
+    background-color: rgb(231, 231, 231);
+    color: black;
+    border-color: #212c52;
+}
+
+.semana-tab.activa {
+    background-color: #212c52;
+    color: white;
+    font-weight: bold;
+    border-style: none;
+    border-color: transparent;
+}
+
+
+.funcion-section {
+    background: #f8f9fc;
+    border-radius: 0px 16px 16px 16px;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+}
+
+.funciones-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.funcion-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 12px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+}
+
+.criterios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+
+}
+
+.criterio-card {
+    background: #ffffff;
+    height: 95%;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.criterio-card h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.criterio-descripcion {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.rating-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.rating-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-label {
+    font-size: 11px;
+    color: #718096;
+    margin-top: 4px;
+}
+
+.rating-number.activa {
+    background-color: #212c52;
+    color: white;
+    font-weight: bold;
+    border-style: none;
+    border-color: transparent;
+}
+
+.rating-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    background: #ffffff;
+}
+
+
+.siguiente {
+    position: absolute;
+    bottom: -20px;   
+    right: 24px;    
+    font-size: 60px;
+    color: #2d3748;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+.anterior {
+    margin-right: 86%;
+    position: absolute;
+    bottom: -20px;
+    left: 24px;
+    font-size: 60px;
+    color: #2d3748;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+
+.siguiente:hover i,
+.anterior:hover i {
+    color: #3060b3;
+}
+
+.botones-acciones-seguimiento {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px; 
+  margin-top: 20px;
+}
+
+.criterio-card.criterio-org-contenidos {
+    width: 75%;
+}
+
+.criterio-card.criterio-org-presentacion {
+    width: 75%;
+    margin-left: 120px;
+}
+
+.criterio-ord_ambiente .rating-number {
+    margin-top: 20px;
+}
+
+.criterio-card.criterio-calificacion_sistema {
+    width:80%;
+    height: 100%;
+    margin-left: -10px;
+    margin-top: -20px;
+}
+
+.criterio-card.criterio-retroalimentacion {
+    width:80%;
+    height: 100%;
+    margin-left: 100px;
+    margin-top: -20px;
+}
+
+.criterio-card.criterio-apertura_foros {
+    width:80%;
+    height: 90%;
+    margin-left: 100px;
+}
+
+.criterio-card.criterio-respuesta_foros {
+    width:80%;
+    height: 90%;
+    margin-left: -10px;
+}
+
+.criterio-calificacion_sistema .rating-number {
+    margin-top: 20px;
+}
+
+.grid-dos-columnas {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+

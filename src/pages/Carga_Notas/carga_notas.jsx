@@ -12,7 +12,7 @@ export default function CargaDeNotas() {
       </div>
 
       <div className="cardd">
-          <h4>Evalue el cumplimiento en la carga de notas, del docente MARGARITO PERÉZ (101010101)</h4>
+          <h4>Evalúe el cumplimiento en la carga de notas del docente MARGARITO PERÉZ (101010101)</h4>
       </div>
 
       {/* Contenido */}
