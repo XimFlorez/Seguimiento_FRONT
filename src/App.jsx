@@ -7,13 +7,10 @@ import ActividadesInstitucionales from './pages/Actividades/actividades';
 import "./index.css";
 import CargaDeNotas from './pages/Carga_Notas/carga_notas';
 import Observaciones from './pages/Observaciones/observaciones';
-import { useEffect, useState } from "react";
 import Encuentros from './pages/Encuentros/encuentros';
 import CargarDatos from './pages/Cargar_Datos/cargar_datos';
 import SeguimientoFuncional from './pages/Seguimiento_Funcional/seguimiento_funcional';
-=========
 import { useEffect, useState } from "react";
->>>>>>>>> Temporary merge branch 2
 
 const App = () => {
    const [mensaje, setMensaje] = useState("");

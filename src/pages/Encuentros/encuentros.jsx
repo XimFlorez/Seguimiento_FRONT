@@ -1,6 +1,9 @@
 import { FaSave, FaBroom, FaEdit } from "react-icons/fa"; 
 import { VscAdd } from "react-icons/vsc";
 import './encuentros.css';
+import React, { useState } from 'react';
+import { guardarEncuentros } from '../../services/encuentrosService'; 
+import Swal from 'sweetalert2';
 
 export default function Encuentros() {
   return (

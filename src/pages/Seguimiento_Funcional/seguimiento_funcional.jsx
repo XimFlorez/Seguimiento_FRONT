@@ -139,6 +139,10 @@ export default function SeguimientoFuncional() {
                 <div className="semana-content">
                     <div className="funciones-grid">
                         <div className="funcion-section">
+                            <div className="card-seguimiento">
+                                <h4>Evalúe el cumplimiento en los encuentros sincrónicos del docente MARGARITO PERÉZ (101010101)</h4>
+                            </div>
+
                             <h4 className="funcion-titulo">{funciones[indiceFuncion].titulo}</h4>
 
                             <div className={`criterios-grid ${esFuncionAcademica ? "grid-dos-columnas" : ""}`}>
